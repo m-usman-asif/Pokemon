@@ -1,0 +1,17 @@
+<h1>POKEMONS</h1>
+
+<ion-list *ngIf="pokeList">
+  <ion-item
+    *ngFor="let pokemon of pokeList; let pokemonId = index"
+    [routerLink]="['/', 'tabs', 'pokemon', pokemonId + 1]"
+  >
+    <ion-label>{{ pokemon.name }}</ion-label>
+    <ion-avatar slot="start">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+          pokemonId + 1
+        }}.png"
+      />
+    </ion-avatar>
+  </ion-item>
+</ion-list>

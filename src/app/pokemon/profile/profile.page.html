@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="profile">{{ profile.name }}</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="profile">
+    <ion-img
+      src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemonId }}.png"
+    ></ion-img>
+
+    <ion-card-header>
+      <ion-card-subtitle>{{ profile.types[0].type.name }}</ion-card-subtitle>
+      <ion-card-title>{{ profile.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile, and
+      climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
