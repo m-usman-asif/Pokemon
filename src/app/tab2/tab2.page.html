@@ -6,4 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ul *ngIf="detailsPoke">
+  <li *ngFor="let details of detailsPoke.results">
+      <div class="list">
+        <h3>{{ details.name }}</h3>
+        <h5> {{ details.url }}</h5>
+      </div> 
+  </li>
+</ul>
+
