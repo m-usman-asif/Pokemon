@@ -10,18 +10,24 @@
 
 <ion-content padding>
   <ion-card *ngIf="profile">
-    <ion-img
-      src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemonId }}.png"
-    ></ion-img>
+    <ion-img  src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemonId }}.png"></ion-img>
 
     <ion-card-header>
-      <ion-card-subtitle>{{ profile.types[0].type.name }}</ion-card-subtitle>
-      <ion-card-title>{{ profile.name }}</ion-card-title>
+        <ion-card-title>{{ profile.name }}</ion-card-title>
+      <ion-card-subtitle> Type : {{ profile.types[0].type.name }}</ion-card-subtitle>
+      <ion-card-subtitle> Weight : {{ profile.weight }} kg</ion-card-subtitle>
+      <ion-card-subtitle> Height : {{ profile.height }} </ion-card-subtitle>
+      <ion-card-subtitle> Stats : {{ profile.stats[0].base_stat }} </ion-card-subtitle>
+      <ion-card-subtitle> Stats Name : {{ profile.stats[1].stat.name }} </ion-card-subtitle>
+      <ion-card-subtitle> Moves : {{ profile.moves[0].move.name }} </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile, and
-      climb a mountain or spend a week in the woods. Wash your spirit clean.
+
+
+
+
     </ion-card-content>
+
   </ion-card>
 </ion-content>

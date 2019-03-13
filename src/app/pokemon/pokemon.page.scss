@@ -1,32 +1,13 @@
-h1 {
-    margin-top: 0px;
-    text-align: center;
-    font-weight: bold;
-    background: #000;
-    color: #fff;
-    padding: 15px;
-}
-
-ul {
-  overflow: scroll;
-  list-style: none;
-  padding-left: 0px;
-  text-align: center;
-}
-
-h3 {
-  font-size: 25px;
-  font-weight: 600;
+ion-label {
+  color: #de5252 !important;
   text-transform: uppercase;
 }
-
-div {
-  padding: 10px;
-  -webkit-box-shadow: 1px 2px 5px 3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 2px 5px 3px rgba(0,0,0,0.75);
-  box-shadow: 1px 2px 5px 3px rgba(0,0,0,0.75);
-    margin-left: 10px;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    margin-top: 10px;
+h1 {
+    text-align: center;
+    background: #000000;
+    color: #fff;
+    margin-top: 0px;
+    font-weight: bold;
+    padding: 10px;
 }
+

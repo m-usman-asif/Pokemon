@@ -21,11 +21,15 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'item',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../item/item.module#ItemPageModule'
+          },
+          {
+            path: ':itemId',
+            loadChildren: '../item/details/details.module#DetailsPageModule'
           }
         ]
       },

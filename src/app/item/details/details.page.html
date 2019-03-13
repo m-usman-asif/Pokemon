@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title *ngIf="itemDetail">{{ itemDetail.name }}</ion-title>
+
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-card *ngIf="itemDetail">
+      <ion-img  src="{{ itemDetail.sprites.default }}"></ion-img>
+
+      <ion-card-header>
+
+        <ion-card-subtitle>{{ itemDetail.cost }}</ion-card-subtitle>
+        <ion-card-title>{{ itemDetail.name }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+
+
+
+      </ion-card-content>
+
+    </ion-card>
+  </ion-content>

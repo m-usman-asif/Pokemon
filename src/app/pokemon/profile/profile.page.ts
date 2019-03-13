@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
+import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-profile',
@@ -11,14 +13,25 @@ export class ProfilePage implements OnInit {
   pokemonId: string;
   profile: any;
 
+  isLoading = false;
+
   constructor(
     private activatedRoute: ActivatedRoute,
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
+    private loadingCtrl: LoadingController
   ) {}
 
   ngOnInit() {
     this.pokemonId = this.activatedRoute.snapshot.paramMap.get('pokemonId');
-    this.getProfile();
+      this.isLoading = true;
+      this.getProfile();
+      this.loadingCtrl.create({message: 'loading Profile'}).then(loadingEl => {
+        loadingEl.present();
+        setTimeout(() => {
+          this.isLoading = false;
+          loadingEl.dismiss();
+        }, 1000);
+      });
   }
 
   getProfile() {

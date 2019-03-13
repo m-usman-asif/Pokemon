@@ -9,12 +9,10 @@ import { PokemonService } from './pokemon.service';
   styleUrls: ['pokemon.page.scss']
 })
 export class PokemonPage implements OnInit {
-  pokeList: any = [];
-
+  pokeList: any[];
   detailsPoke = null;
 
   constructor(
-    private data: DataService,
     private pokemonService: PokemonService,
     private http: HttpClient
   ) {}
@@ -22,7 +20,9 @@ export class PokemonPage implements OnInit {
   ngOnInit() {
     this.pokemonService.getAllPokemon().subscribe(result => {
       this.pokeList = result.results;
-      console.log(this.pokeList);
+      //console.log(this.pokeList);
+
     });
   }
+
 }

@@ -8,10 +8,6 @@ export class DataService {
 
   url: any = 'https://pokeapi.co/api/v2/pokemon/';
 
-  //abilityUrl: any = 'https://pokeapi.co/api/v2/pokemon/1';
-
-
-
   constructor(private http: HttpClient) { }
 
   getPokemons(): Observable<any> {

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Items</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-list *ngIf="itemList">
+  <ion-item *ngFor="let item of itemList">
+    <ion-label>{{ item.name }}</ion-label>
+    <ion-avatar slot="start">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemonId + 1 }}.png"/>
+    </ion-avatar>
+  </ion-item>
+</ion-list> -->
+
+
+<ion-list *ngIf="itemList">
+  <ion-item *ngFor="let item of itemList; let itemId = index" [routerLink]="['/', 'tabs', 'item', itemId + 1]">
+    <ion-label>{{ item.name }}</ion-label>
+    <ion-avatar slot="start">
+      <img src="../../assets/_ionicons_svg_md-baseball.svg " />
+    </ion-avatar>
+  </ion-item>
+</ion-list>
+
+
+
+
