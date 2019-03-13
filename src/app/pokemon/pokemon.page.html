@@ -1,20 +1,30 @@
-<h1>POKEMONS</h1>
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Pokemon App</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-
-<ion-list *ngIf="pokeList">
-  <ion-item-sliding
-    *ngFor="let pokemon of pokeList; let pokemonId = index">
-    <ion-item [routerLink]="['/', 'tabs', 'pokemon', pokemonId + 1]">
-      <ion-label>{{ pokemon.name }}</ion-label>
-      <ion-avatar slot="start">
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemonId + 1 }}.png"/>
-      </ion-avatar>
-    </ion-item>
-    <ion-item-options>
-      <ion-item-option color="secondary" (click)="clickValue(pokemon.name, pokemonId + 1)">
-         <ion-icon name="heart"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
+<ion-content>
+  <ion-list *ngIf="pokeList">
+    <ion-item-sliding *ngFor="let pokemon of pokeList; let pokemonId = index">
+      <ion-item [routerLink]="['/', 'tabs', 'pokemon', pokemonId + 1]">
+        <ion-label>{{ pokemon.name }}</ion-label>
+        <ion-avatar slot="start">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+              pokemonId + 1
+            }}.png"
+          />
+        </ion-avatar>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option
+          color="secondary"
+          (click)="onFavPokemon(pokemon.name, pokemonId + 1)"
+        >
+          <ion-icon name="heart"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

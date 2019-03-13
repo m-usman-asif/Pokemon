@@ -21,8 +21,10 @@ export class PokemonPage implements OnInit {
     this.pokemonService.getAllPokemon().subscribe(result => {
       this.pokeList = result.results;
       //console.log(this.pokeList);
-
     });
   }
 
+  onFavPokemon(pokemonName: string, pokemonId: number) {
+    this.pokemonService.addToFav(pokemonName, pokemonId);
+  }
 }

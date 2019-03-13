@@ -6,8 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PokemonService {
-
-  favouriteList: Array<{id: number, name: string}> = [];
+  favouriteList: Array<{ id: number; name: string }> = [];
 
   constructor(private http: HttpClient) {}
 
@@ -19,15 +18,14 @@ export class PokemonService {
     return this.http.get('https://pokeapi.co/api/v2/pokemon/' + pokemonId);
   }
 
-
   getFavourite() {
     return ['this.favouriteList'];
   }
 
-   clickValue(pokemonname: string , id: number) {
-     this.favouriteList.push({ id: id , name: pokemonname });
-     console.log(this.favouriteList);
-     id = 0;
-     pokemonname = '';
-   }
+  addToFav(pokemonname: string, id: number) {
+    this.favouriteList.push({ id: id, name: pokemonname });
+    console.log(this.favouriteList);
+    id = 0;
+    pokemonname = '';
+  }
 }
