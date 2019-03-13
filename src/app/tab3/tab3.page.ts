@@ -9,16 +9,16 @@ import { Favourite } from '../favourite.model';
   providers: [Favourite]
 })
 export class Tab3Page implements OnInit {
+  // declare the list
+  list: Array<{ id: number; name: string }> = [];
 
-  store: any[];
+  constructor(private pokemonService: PokemonService) {}
 
+  ngOnInit() {}
 
-
-  constructor(private pokemonService: PokemonService,
-              private favour: Favourite) {}
-
-  ngOnInit() {
-    this.store = this.favour.favouriteList;
-    console.log(this.store);
+  // this will run before entering the page, read this https://medium.com/@paulstelzer/ionic-4-and-the-lifecycle-hooks-4fe9eabb2864
+  ionViewWillEnter() {
+    this.list = this.pokemonService.favouriteList;
+    console.log(this.list);
   }
 }
