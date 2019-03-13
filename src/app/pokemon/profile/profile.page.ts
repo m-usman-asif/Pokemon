@@ -37,7 +37,7 @@ export class ProfilePage implements OnInit {
   getProfile() {
     this.pokemonService.getPokemon(this.pokemonId).subscribe(result => {
       this.profile = result;
-      console.log(this.profile);
+      //console.log(this.profile);
     });
   }
 }
