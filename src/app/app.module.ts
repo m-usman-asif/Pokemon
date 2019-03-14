@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
+import { IonicStorageModule } from '@ionic/storage';
 import { AppComponent } from './app.component';
 import { Favourite } from './favourite.model';
 
@@ -18,7 +19,8 @@ import { Favourite } from './favourite.model';
      BrowserModule,
      IonicModule.forRoot(),
      AppRoutingModule,
-     HttpClientModule
+     HttpClientModule,
+     IonicStorageModule.forRoot()
     ],
   providers: [
     StatusBar,
