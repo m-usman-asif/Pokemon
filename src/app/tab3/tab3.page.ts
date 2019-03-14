@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon/pokemon.service';
 import { Favourite } from '../favourite.model';
-import { StorageService } from '../services/storage.service';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab3',
@@ -14,16 +13,17 @@ export class Tab3Page implements OnInit {
   // declare the list
   list: Array<{ id: number; name: string }> = [];
 
-  constructor(private pokemonService: PokemonService,
-              private favour: Favourite,
-              private storage: StorageService) {}
+  constructor(
+    private pokemonService: PokemonService,
+    private favour: Favourite,
+    private storage: Storage
+  ) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   ionViewWillEnter() {
-    this.list = this.pokemonService.favouriteList;
-    console.log(this.list);
+    this.storage.get('pokemonList').then(list => {
+      this.list = list;
+    });
   }
 }
